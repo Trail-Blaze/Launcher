@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGW0P5HTEX"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HGW0P5HTEX"
+    ></script>
     <script src="src/assets/js/tracking.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,18 +27,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
     <link rel="stylesheet" href="./dist/css/tailwind.css" />
   </head>
   <style>
     body {
-      font-family: "Manrope", sans-serif;
+      font-family: "Montserrat", sans-serif;
     }
   </style>
   <body class="bg-gray-300">
+    <div class="fixed text-xl font-black z-50 text-white" style="top: 2%; left: 2%">SYNERGY</div>
     <!-- <div
       includefile="./src/assets/partials/html/sidebar.html"
       class="select-none fit-content bg-gray-800 text-white border-r border-blackblack fixed min-h-screen pt-8"
@@ -77,43 +84,50 @@
           <input type="radio" id="Slide3" name="slider" title="Add an Icon" />
           <div class="labels">
             <label class="Slide" for="Slide1" id="Slide1">
-              <div class="content">
-                <h1 id="greeting_T" class="normal-case text-4xl font-semibold">
-                  Uh-Oh!
-                </h1>
-                <h1 id="greeting_S" class="normal-case text-md font-light">
-                  If you're seeing this...something broke....I think...<br/>Or your computer is clearly a potato. 🥔 Try closing and opening Blaze though, that might work ;)
-                </h1>
-                <br />
-                <input
-                  type="text"
-                  id="selectLogin"
-                  style="
-                    all: inherit;
-                    position: initial;
-                    display: initial;
-                    cursor: initial;
-                    margin: 0;
-                    height: 2.5rem;
-                    width: 100%;
-                    background: #00000044;
-                    border-radius: 2.5px;
-                    border-bottom: 2.3px solid #006eff;
-                    font-size: 1.5rem;
-                    font-weight: 400;
-                  "
-                />
-              </div>
-              <div class="icon">
-                <span><i class="fa fa-keyboard-o"></i></span
-                ><span class="font-semibold">Use Arrow Keys</span>
-                <a
-                  id="completionBack"
-                  href="#"
-                  onclick="window.history.back();"
-                  class="hidden text-blue-300 text-xl"
-                  >Go Back</a
-                >
+              <div class="flex content-center items-center">
+                <div class="">
+                  <img src="./src/assets/png/blaze.png" width="100%" />
+                </div>
+                <div class="content">
+                  <h1 id="greeting_T" class="normal-case text-4xl font-black">
+                    Uh-Oh!
+                  </h1>
+                  <h1 id="greeting_S" class="normal-case text-md font-bold">
+                    If you're seeing this...something broke....I think...<br />Or
+                    your computer is clearly a potato. 🥔 Try closing and
+                    opening Blaze though, that might work ;)
+                  </h1>
+                  <br />
+                  <input
+                    type="text"
+                    id="selectLogin"
+                    style="
+                      all: inherit;
+                      position: initial;
+                      display: initial;
+                      cursor: initial;
+                      margin: 0;
+                      height: 2.5rem;
+                      width: 100%;
+                      background: #00000044;
+                      border-radius: 2.5px;
+                      border-bottom: 2.3px solid #bb71fb;
+                      font-size: 1.5rem;
+                      font-weight: 400;
+                    "
+                  />
+                </div>
+                <div class="icon">
+                  <span><i class="fa fa-keyboard-o"></i></span
+                  ><span class="font-semibold">Use Arrow Keys</span>
+                  <a
+                    id="completionBack"
+                    href="#"
+                    onclick="window.history.back();"
+                    class="hidden text-blue-300 text-xl"
+                    >Go Back</a
+                  >
+                </div>
               </div>
             </label>
             <label class="Slide" for="Slide2" id="Slide2">
@@ -142,7 +156,7 @@
                       width: 50%;
                       background: #00000044;
                       border-radius: 2.5px;
-                      border-bottom: 2px solid #ff0000;
+                      border-bottom: 2px solid #bb71fb;
                       font-size: 1.5rem;
                       font-weight: 400;
                       margin-right: 5px;
@@ -158,7 +172,7 @@
                       background: #00000044;
                       border-radius: 2.5px;
                       color: white;
-                      border-bottom: 2px solid #ff0000;
+                      border-bottom: 2px solid #bb71fb;
                     "
                     class="hover:opacity-70 text-black pl-5 pr-5 select-none"
                   >
