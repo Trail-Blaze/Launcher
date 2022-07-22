@@ -36,13 +36,13 @@ if (fs.existsSync(path.join(userAssetsDir, "\\InstallList.json"))) {
    installList = require(path.join(userAssetsDir, "\\InstallList.json"));
    backButton.classList.remove("hidden");
    // Text displayed when install is added
-   greetingTitle.innerText = "WELCOME TO SYNERGY";
+   greetingTitle.innerText = "COOL, YOU WANNA ADD ANOTHER INSTALL?";
    greetingSubtitle.innerText =
-      "WHAT DO YOU WANT YOUR NAME TO BE";
+      "JUST TYPE THE USERNAME BELOW AND LET'S GO!";
 
 } else {
    // Text displayed when app is first run
-   greetingTitle.innerText = "WELCOME TO SYNERGY";
+   greetingTitle.innerText = "WELCOME TO VOLTAIC";
    greetingSubtitle.innerText = "WHAT DO YOU WANT YOUR NAME TO BE";
 }
 
