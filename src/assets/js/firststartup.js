@@ -88,7 +88,7 @@ finishUp.addEventListener("click", async () => {
       }
    );
    writeNav();
-   window.location.replace("boot.html");
+   window.location.replace("index.html");
 });
 
 changeableIcon.addEventListener("click", async () => {
