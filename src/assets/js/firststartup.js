@@ -1,4 +1,4 @@
-const { remote } = require("electron");
+const remote = require('@electron/remote');
 const { dialog } = remote;
 // const path = require("path");
 // const fs = require("fs");

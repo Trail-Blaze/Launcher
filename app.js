@@ -1,6 +1,7 @@
 // const { app, ipcMain } = require("deskgap");
 // const { BrowserWindow } = require("deskgap")
 const { app, ipcMain, BrowserWindow, session } = require("electron");
+require('@electron/remote/main').initialize()
 const ipc = ipcMain;
 const path = require("path");
 // const { cpuUsage } = require("process");
@@ -58,7 +59,7 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "index.html"));
-
+  require("@electron/remote/main").enable(mainWindow.webContents)
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
   mainWindow.setOpacity(0.95);
