@@ -12,6 +12,7 @@ let launcherConfig;
 const enableTracking = document.getElementById("enableTracking");
 const darkTheme = document.getElementById("darkTheme");
 const lightTheme = document.getElementById("lightTheme");
+const custom_ = document.getElementById("curstom_");
 const backendOnline = document.getElementById("backendOnline");
 const backendOffline = document.getElementById("backendOffline");
 
@@ -253,7 +254,9 @@ function restoreSettings() {
     lightTheme.checked = true;
   } else if (launcherConfig.theme === "dark") {
     darkTheme.checked = true;
-  } else {
+  } else if (launcherConfig.theme === "custom"){
+    custom_.checked = true;
+  }else{
     errmsg.classList.remove("hidden");
   }
 
@@ -330,6 +333,10 @@ function saveSettings() {
     }
     if (lightTheme.checked) {
       launcherConfig.theme = "light";
+    }
+
+    if (custom_.checked === true) {
+      launcherConfig.theme = "custom";
     }
 
     if (backendUpdates.checked) {
