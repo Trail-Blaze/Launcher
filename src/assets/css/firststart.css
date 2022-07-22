@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
   /*  background: deeppink; */
-  background: #2B2B38;
+  background: linear-gradient(to right, #739ffc , #a473fb);
     position: relative;
     display: flex;
     align-items: center;
@@ -98,13 +98,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #2B2B38;
+    background: linear-gradient(to right, #739ffc , #a473fb);
     z-index: 0;
     transition: all 0.75s cubic-bezier(0.75, 0.25, 0, 1.05);
   }
   .contenedor form .labels label:nth-child(odd) {
     /* background: #F5004F; */
-    background: #2B2B38;
+    background: linear-gradient(to right, #739ffc , #a473fb);
     color: white !important;
   }
   

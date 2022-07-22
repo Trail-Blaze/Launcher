@@ -35,12 +35,15 @@ let installList = []
 if (fs.existsSync(path.join(userAssetsDir, "\\InstallList.json"))) {
    installList = require(path.join(userAssetsDir, "\\InstallList.json"));
    backButton.classList.remove("hidden");
-   greetingTitle.innerText = "An Awesome Gamertag";
+   // Text displayed when install is added
+   greetingTitle.innerText = "WELCOME TO SYNERGY";
    greetingSubtitle.innerText =
-      "Pick the username you'd like to use for this install. No Zalgo, please!";
+      "WHAT DO YOU WANT YOUR NAME TO BE";
+
 } else {
-   greetingTitle.innerText = "What's Your Name?";
-   greetingSubtitle.innerText = "Hi! Nice to meet you! What's your name?";
+   // Text displayed when app is first run
+   greetingTitle.innerText = "WELCOME TO SYNERGY";
+   greetingSubtitle.innerText = "WHAT DO YOU WANT YOUR NAME TO BE";
 }
 
 affirmCounter();
