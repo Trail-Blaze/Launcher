@@ -186,7 +186,6 @@ function affirmCounter() {
 
 function writeNav() {
    if (counter > 0) return;
-   navConfig.navElements.nlink1.displayText = "Boot";
    navConfig.navElements.nlink1.icon = "fas fa-play";
    let navjson = JSON.stringify(navConfig, null, 2);
 
