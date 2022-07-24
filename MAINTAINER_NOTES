@@ -1,3 +1,3 @@
 - Note that hidden theme support is available.
   The themefile overrides any selected themes if exists.
-  The themefile may be accessed at C:\Voltaic\Launcher\theme.json
+  The themefile may be accessed at C:\Voltaic\Launcher\userAssets\theme.json
