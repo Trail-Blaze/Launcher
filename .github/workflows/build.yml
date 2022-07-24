@@ -5,9 +5,9 @@ name: Build Electron Application
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ main ]
   pull_request:
-    branches: [ dev ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -56,4 +56,4 @@ jobs:
           path: build_win-latest.tar.gz
           if-no-files-found: warn
           # Duration after which artifact will expire in days. 0 means using default retention.
-          retention-days: 31
+          retention-days: 1
