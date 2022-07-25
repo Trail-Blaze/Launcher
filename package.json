@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
-    "electron-acrylic-window": "^0.5.11",
     "electron-packager": "^15.4.0",
     "electron-squirrel-startup": "^1.0.0",
     "node-abi": "^3.22.0",
