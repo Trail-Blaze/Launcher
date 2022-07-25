@@ -209,7 +209,7 @@ function sendID(clicked_id) {
     )
       .toString()
       .split(" ")
-      .join("_")} 54 > runner.bat`, // Timeout based upon the average time Fortnite takes to launch
+      .join("_")} 8 > runner.bat`, // Timeout based upon the average time Fortnite takes to launch
     exec_options,
 
     (error, stdout, stderr) => {
@@ -340,7 +340,7 @@ function sendID(clicked_id) {
     }
     setTimeout(() => {
       askLobby();
-    }, 10000);
+    }, 9000);
   } catch (error) {
     thisElement.innerText = "GAME Injection Failed. 😱";
   }
