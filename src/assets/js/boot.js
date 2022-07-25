@@ -291,56 +291,56 @@ function sendID(clicked_id) {
   // TODO: DISABLE THIS LINE OF CODE ONCE JIMMY GETS LOBBY DETECTION WORKING
   try {
     function askLobby() {
-      setTimeout(() => {
-        dialog
-          .showMessageBox({
-            title: "Subsystem Message",
-            message: "Are you in the lobby?",
-            detail:
-              "To prevent the game from crashing, please only click the button if you are currently in the lobby.",
-            type: "info",
-            buttons: ["No, Ask Me Again in 3 Seconds", "I Am In the Lobby"],
-          })
-          .then((selection) => {
-            if (selection == 0) {
-              setTimeout(() => {
-                askLobby();
-              }, 3000);
-            }
+      dialog
+        .showMessageBox({
+          title: "Subsystem Message",
+          message: "Are you in the lobby?",
+          detail:
+            "To prevent the game from crashing, please only click the button if you are currently in the lobby.",
+          type: "info",
+          buttons: ["No, Ask Me Again in 5 Seconds", "I Am In the Lobby"],
+        })
+        .then((selection) => {
+          if (!selection.response) {
+            setTimeout(() => {
+              askLobby();
+            }, 5000);
+          }
+          if (selection.response) {
+            exec(
+              "watson-injects64_SEH DLL/game.dll FortniteClient-Win64-Shipping.exe",
+              exec_options,
 
-            if (selection == 1) {
-              exec(
-                "watson-injects64_SEH DLL/game.dll FortniteClient-Win64-Shipping.exe",
-                exec_options,
-
-                (error, stdout, stderr) => {
-                  if (error) {
-                    console.log(`error: ${error.message}`);
-                    thisElement.innerText = "GAME Injection Failed. 😱";
-                    thisElement.classList.remove("bg-yellow-300");
-                    thisElement.classList.remove("color-black");
-                    thisElement.classList.add("bg-red-300");
-                    thisElement.classList.add("color-white");
-                    return;
-                  }
-                  if (stderr) {
-                    console.log(`stderr: ${stderr}`);
-                    thisElement.innerText = "GAME Injection Failed. 😱";
-                    thisElement.classList.remove("bg-yellow-300");
-                    thisElement.classList.remove("color-black");
-                    thisElement.classList.add("bg-red-300");
-                    thisElement.classList.add("color-white");
-                    return;
-                  }
-                  console.log(`stdout: ${stdout}`);
+              (error, stdout, stderr) => {
+                if (error) {
+                  console.log(`error: ${error.message}`);
+                  thisElement.innerText = "GAME Injection Failed. 😱";
+                  thisElement.classList.remove("bg-yellow-300");
+                  thisElement.classList.remove("color-black");
+                  thisElement.classList.add("bg-red-300");
+                  thisElement.classList.add("color-white");
+                  return;
                 }
-              );
-            }
+                if (stderr) {
+                  console.log(`stderr: ${stderr}`);
+                  thisElement.innerText = "GAME Injection Failed. 😱";
+                  thisElement.classList.remove("bg-yellow-300");
+                  thisElement.classList.remove("color-black");
+                  thisElement.classList.add("bg-red-300");
+                  thisElement.classList.add("color-white");
+                  return;
+                }
+                console.log(`stdout: ${stdout}`);
+              }
+            );
+
             console.log(selection.response);
-          });
-      }, 10000);
+          }
+        });
     }
-    askLobby();
+    setTimeout(() => {
+      askLobby();
+    }, 10000);
   } catch (error) {
     thisElement.innerText = "GAME Injection Failed. 😱";
   }
