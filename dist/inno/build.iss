@@ -4,7 +4,7 @@
 #define MyAppName "OttoMan"
 #define MyAppVersion "0.0.1"
 #define MyAppPublisher "CyberMetrics Syndicate"
-#define MyAppURL "https://synergyfn.github.io"
+#define MyAppURL "https://voltaicfn.github.io"
 #define MyAppExeName "launcher.exe"
 
 [Setup]

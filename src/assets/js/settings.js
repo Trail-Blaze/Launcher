@@ -76,7 +76,7 @@ custom_.addEventListener("change", function () {
         fs.mkdirSync(configDir);
         console.log("Created New Voltaic/Launcher Dir!");
 
-        fetch("https://synergyfn.github.io/res/config/settings.json")
+        fetch("https://voltaicfn.github.io/res/config/settings.json")
           .then((response) => response.json())
           .then((data) => {
             launcherConfig = data;
@@ -95,7 +95,7 @@ custom_.addEventListener("change", function () {
         restoreSettings();
       }
       if (!fs.existsSync(path.join(configDir, "settings.json"))) {
-        fetch("https://synergyfn.github.io/res/config/settings.json")
+        fetch("https://voltaicfn.github.io/res/config/settings.json")
           .then((response) => response.json())
           .then((data) => {
             launcherConfig = data;

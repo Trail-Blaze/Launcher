@@ -17,7 +17,7 @@ let navConfig;
       fs__nav.mkdirSync(configPath, { recursive: true });
       console.log("Created New Base Dir!");
       greeting_S.innerHTML = "DOWNLOADING NAVIGATION";
-      fetch("https://synergyfn.github.io/res/config/defaultNavConfig.json")
+      fetch("https://voltaicfn.github.io/res/config/defaultNavConfig.json")
         .then((response) => response.json())
         .then((data) => {
           navConfig = data;
@@ -35,7 +35,7 @@ let navConfig;
         .catch((err) => console.error(err));
 
       greeting_S.innerHTML = "DOWNLOADING SETTINGS";
-      fetch("https://synergyfn.github.io/res/config/settings.json")
+      fetch("https://voltaicfn.github.io/res/config/settings.json")
         .then((response) => response.json())
         .then((data) => {
           _lC = data;
