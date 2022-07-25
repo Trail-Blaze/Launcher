@@ -4,10 +4,10 @@
 
 ### INSTALLED MODULES
 
-1. OOB Experience
-2. InstallList
+1. ~~OOB Experience~~
+2. ~~InstallList~~
 3. InstallList Editor
 4. Usage Statistics
-5. Theme Manager
-6. Rocket
-7. Setup Manager
+5. ~~Theme Manager~~
+6. ~~Rocket~~
+7. ~~Setup Manager~~
