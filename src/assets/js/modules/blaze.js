@@ -8,9 +8,9 @@ let __drivename =
 let baseDir = path.join(__drivename, "/Voltaic/");
 let configDir = path.join(baseDir, "/Launcher/");
 
-let helpersDir = path.join(baseDir, "/helpers/");
-let backendDir = path.join(baseDir, "/backend/");
-let userAssetsDir = path.join(baseDir, "/userAssets/");
+let helpersDir = path.join(configDir, "/helpers/");
+let backendDir = path.join(configDir, "/backend/");
+let userAssetsDir = path.join(configDir, "/userAssets/");
 const launcherConfig = require(path.join(configDir, "settings.json")); // Opening settings file for readOnly
 
 ref = (id) => document.getElementById(id);

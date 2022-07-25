@@ -193,7 +193,7 @@ function writeNav() {
    let navjson = JSON.stringify(navConfig, null, 2);
 
    fs.writeFile(
-      path.join(baseDir, "defaultNavConfig.json"),
+      path.join(configDir, "defaultNavConfig.json"),
       navjson,
       function (err) {
          if (err) {
