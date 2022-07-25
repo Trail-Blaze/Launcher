@@ -36,6 +36,7 @@ let navConfig;
         .then((response) => response.json())
         .then((data) => {
           _lC = data;
+          data.base = configDir;
           let navjson = JSON.stringify(_lC, null, 2);
           fs.writeFileSync(
             path.join(configDir, "settings.json"),
