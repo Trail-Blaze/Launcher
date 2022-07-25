@@ -1,6 +1,7 @@
 const os__nav = require("os");
 const path__nav = require("path");
 const fs__nav = require("fs");
+const download = require("download");
 let __drivename___nav =
   os__nav.platform == "win32" ? process.cwd().split(path__nav.sep)[0] : "/";
 let baseDir__nav = path__nav.join(__drivename___nav, "/Voltaic/");
@@ -15,6 +16,7 @@ let navConfig;
       greeting_S.innerHTML = "INITIALIZING COMPONENTS";
       fs__nav.mkdirSync(configPath, { recursive: true });
       console.log("Created New Base Dir!");
+      greeting_S.innerHTML = "DOWNLOADING NAVIGATION";
       fetch("https://synergyfn.github.io/res/config/defaultNavConfig.json")
         .then((response) => response.json())
         .then((data) => {
@@ -32,6 +34,7 @@ let navConfig;
         })
         .catch((err) => console.error(err));
 
+      greeting_S.innerHTML = "DOWNLOADING SETTINGS";
       fetch("https://synergyfn.github.io/res/config/settings.json")
         .then((response) => response.json())
         .then((data) => {
@@ -47,11 +50,35 @@ let navConfig;
         })
         .then(() => {
           greeting_S.innerHTML = "GOT SETTINGS";
-          console.warn("Config Issue! Reloading.");
-          window.location.reload();
+          // console.warn("Config Issue! Reloading.");
+          // window.location.reload();
         })
         .catch((err) => console.error(err));
       //  createRepoDir();
+    }
+  });
+  fs__nav.access(path__nav.join(configPath, "/helpers/"), (error) => {
+    if (error) {
+      greeting_S.innerHTML = "DOWNLOADING ROCKET";
+      (async () => {
+        await download(
+          "https://github.com/Trail-Blaze/Rocket/archive/refs/heads/main.zip",
+          path__nav.join(configPath),
+          { extract: true }
+        )
+          .then(() => {
+            fs__nav.renameSync(
+              path__nav.join(configPath, "Rocket-main"),
+              path__nav.join(configPath, "helpers")
+            );
+          }) // Download the latest version of Rocket!
+          .then(() => {
+            greeting_S.innerHTML = "GOT ROCKET";
+            console.warn("Config Issue! Reloading.");
+            window.location.reload();
+          })
+          .catch((err) => console.error(err));
+      })();
     }
   });
 })();

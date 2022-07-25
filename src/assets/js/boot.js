@@ -202,9 +202,12 @@ function sendID(clicked_id) {
   exec(
     `echo ${script} "${
       installList[thisID].location
-    }" eac 87a0c99d9aa3ab5bb6a36C25 ${bypass} ${
+    }" eac 87a0c99d9aa3ab5bb6a36C25 ${bypass} ${(
       installList[thisID].logonAs || "Voltaic"
-    } 54 > runner.bat`, // Timeout based upon the average time Fortnite takes to launch
+    )
+      .toString()
+      .split(" ")
+      .join("_")} 54 > runner.bat`, // Timeout based upon the average time Fortnite takes to launch
     exec_options,
 
     (error, stdout, stderr) => {
@@ -232,32 +235,32 @@ function sendID(clicked_id) {
 
   // Start the backend...
 
-  exec(
-    `StartMainServiceModule.lnk`,
-    exec_options2,
+  // exec(
+  //   `StartMainServiceModule.lnk`,
+  //   exec_options2,
 
-    (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        thisElement.innerText = "Backend Failed. 😱";
-        thisElement.classList.remove("bg-yellow-300");
-        thisElement.classList.remove("color-black");
-        thisElement.classList.add("bg-red-300");
-        thisElement.classList.add("color-white");
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        thisElement.innerText = "Backend Failed. 😱";
-        thisElement.classList.remove("bg-yellow-300");
-        thisElement.classList.remove("color-black");
-        thisElement.classList.add("bg-red-300");
-        thisElement.classList.add("color-white");
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
-    }
-  );
+  //   (error, stdout, stderr) => {
+  //     if (error) {
+  //       console.log(`error: ${error.message}`);
+  //       thisElement.innerText = "Backend Failed. 😱";
+  //       thisElement.classList.remove("bg-yellow-300");
+  //       thisElement.classList.remove("color-black");
+  //       thisElement.classList.add("bg-red-300");
+  //       thisElement.classList.add("color-white");
+  //       return;
+  //     }
+  //     if (stderr) {
+  //       console.log(`stderr: ${stderr}`);
+  //       thisElement.innerText = "Backend Failed. 😱";
+  //       thisElement.classList.remove("bg-yellow-300");
+  //       thisElement.classList.remove("color-black");
+  //       thisElement.classList.add("bg-red-300");
+  //       thisElement.classList.add("color-white");
+  //       return;
+  //     }
+  //     console.log(`stdout: ${stdout}`);
+  //   }
+  // );
 
   // Run the thang...
 
