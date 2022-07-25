@@ -1,11 +1,11 @@
 // const { app, ipcMain } = require("deskgap");
 // const { BrowserWindow } = require("deskgap")
 const { app, ipcMain, BrowserWindow, session } = require("electron");
-require('@electron/remote/main').initialize()
+require("@electron/remote/main").initialize();
 const ipc = ipcMain;
 const path = require("path");
 // const { cpuUsage } = require("process");
-const version = "1.0.1-Dev";
+const version = "2.0.1-Dev";
 const full_version = `BL Otto Launcher v${version}`;
 let win;
 
@@ -59,7 +59,7 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "escrow.html"));
-  require("@electron/remote/main").enable(mainWindow.webContents)
+  require("@electron/remote/main").enable(mainWindow.webContents);
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
   mainWindow.setOpacity(0.95);
