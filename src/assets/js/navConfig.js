@@ -11,6 +11,8 @@ let navConfig;
 (function createConfig() {
   fs__nav.access(configPath, function (error) {
     if (error) {
+      greeting_T.innerHTML = "WAIT";
+      greeting_S.innerHTML = "INITIALIZING COMPONENTS";
       fs__nav.mkdirSync(configPath, { recursive: true });
       console.log("Created New Base Dir!");
       fetch("https://synergyfn.github.io/res/config/defaultNavConfig.json")
@@ -24,6 +26,9 @@ let navConfig;
             "utf-8"
           );
           //   createConfig();
+        })
+        .then(() => {
+          greeting_S.innerHTML = "GOT NAVIGATION";
         })
         .catch((err) => console.error(err));
 
@@ -40,6 +45,7 @@ let navConfig;
           // createConfig();
         })
         .then(() => {
+          greeting_S.innerHTML = "GOT SETTINGS";
           console.warn("Config Issue! Reloading.");
           window.location.reload();
         })
