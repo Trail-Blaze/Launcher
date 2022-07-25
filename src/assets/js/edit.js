@@ -1,5 +1,6 @@
 // Set delay on script as we know people still use OttoMan on potato PCs * cough * * cough *
 let newHeight;
+// SelectLogin, SelectName (entryName), SelectLocation
 setTimeout(() => {
   // Commit #134 - Add support to more entries
   const edit = document.querySelectorAll('[id^="edit_"]');

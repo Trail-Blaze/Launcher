@@ -60,9 +60,16 @@ function setNav() {
   try {
     populateNav();
   } catch (error) {
+    console.error(
+      "There is either no Navigation to populate or there is an error waiting to be fixed. Run populateNav() for a stack trace if any."
+    );
     return;
   }
 }
+
+setTimeout(() => {
+  setNav();
+}, 900);
 
 /*
  *
@@ -79,6 +86,7 @@ function setNav() {
  */
 function populateNav() {
   // console.log(counter);
+  const navConfig = require(path.join(configDir, "defaultNavConfig.json"));
   while (x <= navConfig.navProps.navElements) {
     // Create Entry
     let sideBarEntry = document.createElement("a");

@@ -31,3 +31,4 @@ function unTruncate(id) {
     id.classList.add("truncate");
   }
 }
+const ref = (e = e.toString()) => document.getElementById(e);
