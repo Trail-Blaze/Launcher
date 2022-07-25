@@ -3,22 +3,22 @@ const path__nav = require("path");
 const fs__nav = require("fs");
 let __drivename___nav =
   os__nav.platform == "win32" ? process.cwd().split(path__nav.sep)[0] : "/";
-let blazeDir__nav = path__nav.join(__drivename___nav, "/Blaze/");
-const configPath = path__nav.join(blazeDir__nav, "/Launcher/");
+let baseDir__nav = path__nav.join(__drivename___nav, "/Voltaic/");
+const configPath = path__nav.join(baseDir__nav, "/Launcher/");
 let x = 1;
 let navConfig;
 
 (function createConfig() {
-  fs__nav.access(blazeDir__nav, function (error) {
+  fs__nav.access(baseDir__nav, function (error) {
     if (error) {
-      fs__nav.mkdirSync(blazeDir__nav);
-      console.log("Created New Blaze Dir!");
+      fs__nav.mkdirSync(baseDir__nav);
+      console.log("Created New Base Dir!");
       createRepoDir();
     }
     fs__nav.access(configPath, function (error) {
       if (error) {
         fs__nav.mkdirSync(configPath);
-        console.log("Created New Blaze/Launcher Dir!");
+        console.log("Created New Voltaic/Launcher Dir!");
 
         fetch(
           "https://synergyfn.github.io/res/config/defaultNavConfig.json"

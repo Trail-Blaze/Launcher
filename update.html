@@ -14,8 +14,8 @@
     const os = require("os");
     let __drivename =
       os.platform == "win32" ? process.cwd().split(path.sep)[0] : "/";
-    let blazeDir = path.join(__drivename, "/Blaze/");
-    fs.unlinkSync(path.join(blazeDir, "Launcher/defaultNavConfig.json"));
+    let baseDir = path.join(__drivename, "/Voltaic/");
+    fs.unlinkSync(path.join(baseDir, "Launcher/defaultNavConfig.json"));
     document.location.href = "index.html";
     </script>
 <body style="background: #0c0c0c;">

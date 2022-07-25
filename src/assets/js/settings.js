@@ -3,8 +3,8 @@ const path = require("path");
 const fs = require("fs");
 let __drivename =
   os.platform == "win32" ? process.cwd().split(path.sep)[0] : "/";
-let blazeDir = path.join(__drivename, "/Blaze/");
-const configDir = path.join(blazeDir, "/Launcher/");
+let baseDir = path.join(__drivename, "/Voltaic/");
+const configDir = path.join(baseDir, "/Launcher/");
 let launcherConfig;
 
 // All the checkboxes in the settings window
@@ -180,18 +180,18 @@ splashBlaze.addEventListener("change", function () {
 //TODO FSACCESS NAVJSON. IF NOT FOUND, CREATE FILE
 
 (function createConfig() {
-  fs.access(blazeDir, function (error) {
+  fs.access(baseDir, function (error) {
     if (error) {
-      fs.mkdirSync(blazeDir);
-      console.log("Created New Blaze Dir!");
+      fs.mkdirSync(baseDir);
+      console.log("Created New Base Dir!");
       createRepoDir();
     }
     fs.access(configDir, function (error) {
       if (error) {
         fs.mkdirSync(configDir);
-        console.log("Created New Blaze/Launcher Dir!");
+        console.log("Created New Voltaic/Launcher Dir!");
 
-        fetch("https://trail-blaze.github.io/marketplace/config/settings.json")
+        fetch("https://synergyfn.github.io/res/config/settings.json")
           .then((response) => response.json())
           .then((data) => {
             launcherConfig = data;
@@ -210,7 +210,7 @@ splashBlaze.addEventListener("change", function () {
         restoreSettings();
       }
       if (!fs.existsSync(path.join(configDir, "settings.json"))) {
-        fetch("https://trail-blaze.github.io/marketplace/config/settings.json")
+        fetch("https://synergyfn.github.io/res/config/settings.json")
           .then((response) => response.json())
           .then((data) => {
             launcherConfig = data;

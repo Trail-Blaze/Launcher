@@ -203,7 +203,7 @@ function sendID(clicked_id) {
     `echo ${script} "${
       installList[thisID].location
     }" eac 87a0c99d9aa3ab5bb6a36C25 ${bypass} ${
-      installList[thisID].logonAs || "BlazeUser"
+      installList[thisID].logonAs || "Voltaic"
     } 54 > runner.bat`, // Timeout based upon the average time Fortnite takes to launch
     exec_options,
 
@@ -289,14 +289,14 @@ function sendID(clicked_id) {
 ranAlready = false;
 function changeBanner() {
   getHTML(
-    "https://raw.githubusercontent.com/Trail-Blaze/marketplace/main/featuredContent/announcements/partials/letsgo.html",
+    "https://raw.githubusercontent.com/SynergyFN/res/main/featuredContent/announcements/partials/letsgo.html",
     "announcementBanner"
   );
 
   if (!ranAlready) {
     setTimeout(() => {
       getHTML(
-        "https://raw.githubusercontent.com/Trail-Blaze/marketplace/main/featuredContent/announcements/partials/announcement.html",
+        "https://raw.githubusercontent.com/SynergyFN/res/main/featuredContent/announcements/partials/announcement.html",
         "announcementBanner"
       );
     }, 60000);

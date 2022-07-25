@@ -1,4 +1,4 @@
-// Set delay on script as we know people still use Blaze on potato PCs * cough * * cough *
+// Set delay on script as we know people still use OttoMan on potato PCs * cough * * cough *
 let newHeight;
 setTimeout(() => {
   // Commit #134 - Add support to more entries

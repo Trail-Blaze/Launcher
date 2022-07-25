@@ -5,12 +5,12 @@ const os = require("os");
 let __drivename =
   os.platform == "win32" ? process.cwd().split(path.sep)[0] : "/";
 
-let blazeDir = path.join(__drivename, "/Blaze/Launcher/");
+let baseDir = path.join(__drivename, "/Voltaic/Launcher/");
 
-let helpersDir = path.join(blazeDir, "/helpers/");
-let backendDir = path.join(blazeDir, "/backend/");
-let userAssetsDir = path.join(blazeDir, "/userAssets/");
-const launcherConfig = require(path.join(blazeDir, "settings.json")); // Opening settings file for readOnly
+let helpersDir = path.join(baseDir, "/helpers/");
+let backendDir = path.join(baseDir, "/backend/");
+let userAssetsDir = path.join(baseDir, "/userAssets/");
+const launcherConfig = require(path.join(baseDir, "settings.json")); // Opening settings file for readOnly
 
 ref = (id) => document.getElementById(id);
 
@@ -45,7 +45,7 @@ function dropInstall(position = ref(position)) {
 /*
 module.exports = {
   __drivename,
-  blazeDir,
+  baseDir,
   helpersDir,
   backendDir,
   userAssetsDir,

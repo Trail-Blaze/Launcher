@@ -1,6 +1,6 @@
 {
-  "name": "blaze-marketplace",
-  "productName": "blaze-marketplace",
+  "name": "voltaic",
+  "productName": "-marketplace",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "app.js",
@@ -30,7 +30,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "blaze_marketplace"
+            "name": "OttoMan"
           }
         },
         {
