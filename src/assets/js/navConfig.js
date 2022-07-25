@@ -9,74 +9,50 @@ let x = 1;
 let navConfig;
 
 (function createConfig() {
-  fs__nav.access(baseDir__nav, function (error) {
+  fs__nav.access(configPath, function (error) {
     if (error) {
-      fs__nav.mkdirSync(baseDir__nav);
+      fs__nav.mkdirSync(configPath, { recursive: true });
       console.log("Created New Base Dir!");
-      createRepoDir();
-    }
-    fs__nav.access(configPath, function (error) {
-      if (error) {
-        fs__nav.mkdirSync(configPath);
-        console.log("Created New Voltaic/Launcher Dir!");
+      fetch("https://synergyfn.github.io/res/config/defaultNavConfig.json")
+        .then((response) => response.json())
+        .then((data) => {
+          navConfig = data;
+          let navjson = JSON.stringify(navConfig, null, 2);
+          fs__nav.writeFileSync(
+            path__nav.join(configPath, "defaultNavConfig.json"),
+            navjson,
+            "utf-8"
+          );
+          //   createConfig();
+        })
+        .catch((err) => console.error(err));
 
-        fetch(
-          "https://synergyfn.github.io/res/config/defaultNavConfig.json"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            navConfig = data;
-            let navjson = JSON.stringify(navConfig, null, 2);
-            fs__nav.writeFileSync(
-              path__nav.join(configPath, "defaultNavConfig.json"),
-              navjson,
-              "utf-8"
-            );
-            createConfig();
-          })
-          .catch((err) => console.error(err));
-      }
-      if (
-        fs__nav.existsSync(path__nav.join(configPath, "defaultNavConfig.json"))
-      ) {
-        navConfig = require(path__nav.join(
-          configPath,
-          "defaultNavConfig.json"
-        ));
-        setNav();
-      }
-      if (
-        !fs__nav.existsSync(path__nav.join(configPath, "defaultNavConfig.json"))
-      ) {
-        fetch(
-          "https://synergyfn.github.io/res/config/defaultNavConfig.json"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            navConfig = data;
-            let navjson = JSON.stringify(navConfig, null, 2);
-            fs__nav.writeFileSync(
-              path__nav.join(configPath, "defaultNavConfig.json"),
-              navjson,
-              "utf-8"
-            );
-            navConfig = require(path__nav.join(
-              configPath,
-              "defaultNavConfig.json"
-            ));
-            setNav();
-          })
-          .catch((err) => console.error(err));
-      }
-    });
+      fetch("https://synergyfn.github.io/res/config/settings.json")
+        .then((response) => response.json())
+        .then((data) => {
+          _lC = data;
+          let navjson = JSON.stringify(_lC, null, 2);
+          fs.writeFileSync(
+            path.join(configDir, "settings.json"),
+            navjson,
+            "utf-8"
+          );
+          // createConfig();
+        })
+        .then(() => {
+          console.warn("Config Issue! Reloading.");
+          window.location.reload();
+        })
+        .catch((err) => console.error(err));
+      //  createRepoDir();
+    }
   });
 })();
 
 function setNav() {
-  try{
+  try {
     populateNav();
-  }
-  catch(error){
+  } catch (error) {
     return;
   }
 }

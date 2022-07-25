@@ -1,8 +1,6 @@
-# Otto LIVE Build 
-# Otto
-![image](https://user-images.githubusercontent.com/34188635/168923276-823498bc-fb83-4d96-8890-27da367b91c3.png)
+# Voltaic Launcher - A Fork of Blaze's OttoMan - The NO Spyware, NO Adware, NO Nonsense Launcher
 
-## The NO Spyware, NO Adware, NO Nonsense Launcher
+![image](https://user-images.githubusercontent.com/34188635/168923276-823498bc-fb83-4d96-8890-27da367b91c3.png)
 
 ### INSTALLED MODULES
 

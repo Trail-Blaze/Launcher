@@ -5,12 +5,13 @@ const os = require("os");
 let __drivename =
   os.platform == "win32" ? process.cwd().split(path.sep)[0] : "/";
 
-let baseDir = path.join(__drivename, "/Voltaic/Launcher/");
+let baseDir = path.join(__drivename, "/Voltaic/");
+let configDir = path.join(baseDir, "/Launcher/");
 
 let helpersDir = path.join(baseDir, "/helpers/");
 let backendDir = path.join(baseDir, "/backend/");
 let userAssetsDir = path.join(baseDir, "/userAssets/");
-const launcherConfig = require(path.join(baseDir, "settings.json")); // Opening settings file for readOnly
+const launcherConfig = require(path.join(configDir, "settings.json")); // Opening settings file for readOnly
 
 ref = (id) => document.getElementById(id);
 
@@ -49,6 +50,6 @@ module.exports = {
   helpersDir,
   backendDir,
   userAssetsDir,
-  launcherConfig,
+  __lC,
 };
 */

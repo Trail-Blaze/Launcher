@@ -15,7 +15,7 @@ const textPath = document.getElementById("typePath");
 const errMsg = document.getElementById("err@Warn");
 const finishUp = document.getElementById("finishUp");
 // require("./modules/config.js");
-navConfig = require(path.join(baseDir, "defaultNavConfig.json"));
+navConfig = require(path.join(configDir, "defaultNavConfig.json"));
 let logonName;
 let dirName;
 let fileName;
