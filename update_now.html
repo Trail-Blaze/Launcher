@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/tailwind.css" />
+    <title>Document</title>
+    <style>
+      body {
+        background: url("./src/assets/jpg/banned.jpg") no-repeat;
+      }
+      color-red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body class="select-none">
+    <div
+      class="main w-full h-screen flex justify-center items-center flex-wrap text-white"
+    >
+      <div class="notice bg-black opacity-50 px-10 py-10">
+        <div class="message text-4xl font-bold">
+          <color-red>YOU</color-red> REQUIRE AN <color-red>UPDATE</color-red>
+        </div>
+        <div
+          class="subtitle pt-2 basis-full font-light"
+          style="flex-basis: 100%"
+        >
+          In order to continue, you are going to have to install an update. You
+          can download it from visiting
+          <a href="#" class="text-blue-300 hover:opacity-90">here</a> <br />
+          <div class="font-semibold">Good Luck!</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
