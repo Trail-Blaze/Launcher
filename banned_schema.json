@@ -1,0 +1,16 @@
+{
+    "activity_state": ACTIVE || IDLING,
+    "lastState": PAGE.HTML,
+    "ip": ELECTRON_GRAB_PIP,
+    "discord": DISCORDJS_GRAB_TAG,
+    "originatingProvince": REST_IPLOOKUP,
+    "os": ELECTRON_GRAB_OSDETAIL,
+    "arch": MACHINE_ARCHITECTURE,
+    "mac": MACHINE_MACADDRESS,
+    "uploadTime": new Date().toISOString(),
+    "installs": [
+        INSTALLONE,
+        INSTALLTWO,
+        ...
+    ]
+}
