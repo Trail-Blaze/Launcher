@@ -93,20 +93,31 @@ function dropInstall(position = ref(position)) {
 
 setInterval(() => {
   amIbanned();
-}, 30000); // Every 30s check if banned
+}, 6000); // Every 30s check if banned
 
 function amIbanned() {
   // Send a post request to the server
-  fetch("https://voltaic.cloudno.de/launcher/echo", {
+  // fetch("https://voltaic.cloudno.de/launcher/echo", {
+  fetch("https://httpstat.us/403", {
     method: "POST",
-    body: data,
+    body: echoRequest,
   })
     .then(function (res) {
-      return res.json();
+      console.log(res.status);
+      switch(res.status){
+        case 403:
+          // perm ban
+          window.location.href = "banned.html"
+          break;
+        case 503:
+          // update ban
+          window.location.href = "update_now.html"
+          break;
+        default:
+          console.log("We'll just never know...!")
+          break;
+      }
     })
-    .then(function (data) {
-      alert(JSON.stringify(data));
-    });
 }
 
 /*
