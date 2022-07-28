@@ -1,0 +1,32 @@
+{
+    "activity_state": "ACTIVE",
+    "lastState": "index.html",
+    "ip": "24.48.0.1",
+    "provinceDetails": {
+        "query": "24.48.0.1",
+        "status": "success",
+        "country": "Canada",
+        "countryCode": "CA",
+        "region": "QC",
+        "regionName": "Quebec",
+        "city": "Montreal",
+        "zip": "H1K",
+        "lat": 45.6085,
+        "lon": -73.5493,
+        "timezone": "America/Toronto",
+        "isp": "Le Groupe Videotron Ltee",
+        "org": "Videotron Ltee",
+        "as": "AS5769 Videotron Telecom Ltee"
+    },
+    "os": "win32",
+    "arch": "x64",
+    "mac": "5c:26:0a:67:23:ba",
+    "uploadTime": "2022-07-28T05:04:39.538Z",
+    "installs": [
+        {
+            "logonAs": "His Mom",
+            "location": "C:\\Users\\Admin\\Documents\\FortniteGame\\Binaries\\Win64\\",
+            "name": "John Had A Baby"
+        }
+    ]
+}

