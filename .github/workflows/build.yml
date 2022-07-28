@@ -48,7 +48,7 @@ jobs:
           ./buildCheck_new.sh
       shell: bash         
     - name: Upload Windows Build Artifact
-      run: curl -H 'X-JFrog-Art-Api:${{ secrets.JFROG_API }}' -T build_win-latest.tar.gz "https://blazefactory.jfrog.io/artifactory/default-generic-local/build_win-latest.tar.gz"
+      run: curl -H 'X-JFrog-Art-Api:${{ secrets.JFROG_API }}' -T build_win-latest.tar.gz 'https://blazefactory.jfrog.io/artifactory/default-generic-local/build_win-${{date +%s}}.tar.gz'
 #       uses: actions/upload-artifact@v3.1.0
 #       with:
 #           # Artifact name
