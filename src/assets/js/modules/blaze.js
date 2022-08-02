@@ -1,5 +1,5 @@
 // This script always runs throughout the entire lifespan of the app
-const {app} = require("@electron/remote");
+const { app } = require("@electron/remote");
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
@@ -100,25 +100,35 @@ setInterval(() => {
 function amIbanned() {
   // Send a post request to the server
   // fetch("https://voltaic.cloudno.de/launcher/echo", {
+
   fetch("http://localhost:8088/launcher/echo", {
     method: "POST",
     body: JSON.stringify(echoRequest),
-  }).then(function (res) {
-    console.log(res.status);
-    switch (res.status) {
-      case 403:
-        // perm ban
-        window.location.href = "banned.html";
-        break;
-      case 503:
-        // update ban
-        window.location.href = "update_now.html";
-        break;
-      default:
-        console.log("We'll just never know...!");
-        break;
-    }
-  });
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (res) {
+      console.log(res.status);
+      switch (res.status) {
+        case 200:
+          break;
+        case 403:
+          // perm ban
+          window.location.href = "banned.html";
+          break;
+        case 503:
+          // update ban
+          window.location.href = "update_now.html";
+          break;
+        default:
+          console.log("We'll just never know...!");
+          break;
+      }
+    })
+    .catch((error) => {
+      window.location.href = "server_down.html";
+    });
 }
 
 /*
