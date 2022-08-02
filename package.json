@@ -58,15 +58,15 @@
     "getmac": "^5.20.0",
     "node-abi": "^3.22.0",
     "os-utils": "0.0.14",
-    "tailwindcss": "^2.2.7",
+    "tailwindcss": "^3.1.7",
     "v8-compile-cache": "^2.3.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.59",
-    "@electron-forge/maker-deb": "^6.0.0-beta.59",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.59",
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.59",
-    "@electron-forge/maker-zip": "^6.0.0-beta.59",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
     "electron": "15.5.5"
   }
 }

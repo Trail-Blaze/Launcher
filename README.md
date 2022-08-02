@@ -1,4 +1,8 @@
 # Voltaic Launcher - A Fork of Blaze's OttoMan - The NO Spyware, NO Adware, NO Nonsense Launcher
+![image](https://github.com/trail-blaze/otto/actions/workflows/codeql-analysis.yml/badge.svg)
+![image](https://github.com/trail-blaze/otto/actions/workflows/build.yml/badge.svg)
+![image](https://github.com/trail-blaze/otto/actions/workflows/build-css.yml/badge.svg)
+
 
 ![image](https://user-images.githubusercontent.com/34188635/168923276-823498bc-fb83-4d96-8890-27da367b91c3.png)
 
