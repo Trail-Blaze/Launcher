@@ -1,4 +1,5 @@
 // This script always runs throughout the entire lifespan of the app
+const {app} = require("@electron/remote");
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
@@ -39,14 +40,15 @@ let echoRequest = {
   mac: getmac.default(),
   uploadTime: new Date().toISOString(),
   installs: (() => {
-    setTimeout(()=>{
-    if (typeof installList === 'undefined') {
-      echoRequest.installs =  [];
-    } else {
-      echoRequest.installs = installList;
-    }
-  }, 5500)
+    setTimeout(() => {
+      if (typeof installList === "undefined") {
+        echoRequest.installs = [];
+      } else {
+        echoRequest.installs = installList;
+      }
+    }, 5500);
   })(),
+  version: app.getVersion().toString(),
 };
 
 let __drivename =
@@ -101,23 +103,22 @@ function amIbanned() {
   fetch("http://localhost:8088/launcher/echo", {
     method: "POST",
     body: echoRequest,
-  })
-    .then(function (res) {
-      console.log(res.status);
-      switch(res.status){
-        case 403:
-          // perm ban
-          window.location.href = "banned.html"
-          break;
-        case 503:
-          // update ban
-          window.location.href = "update_now.html"
-          break;
-        default:
-          console.log("We'll just never know...!")
-          break;
-      }
-    })
+  }).then(function (res) {
+    console.log(res.status);
+    switch (res.status) {
+      case 403:
+        // perm ban
+        window.location.href = "banned.html";
+        break;
+      case 503:
+        // update ban
+        window.location.href = "update_now.html";
+        break;
+      default:
+        console.log("We'll just never know...!");
+        break;
+    }
+  });
 }
 
 /*
