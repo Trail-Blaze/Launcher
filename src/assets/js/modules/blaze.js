@@ -98,7 +98,7 @@ setInterval(() => {
 function amIbanned() {
   // Send a post request to the server
   // fetch("https://voltaic.cloudno.de/launcher/echo", {
-  fetch("https://httpstat.us/403", {
+  fetch("http://localhost:8088/launcher/echo", {
     method: "POST",
     body: echoRequest,
   })
