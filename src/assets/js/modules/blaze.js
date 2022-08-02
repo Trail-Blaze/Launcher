@@ -102,7 +102,7 @@ function amIbanned() {
   // fetch("https://voltaic.cloudno.de/launcher/echo", {
   fetch("http://localhost:8088/launcher/echo", {
     method: "POST",
-    body: echoRequest,
+    body: JSON.stringify(echoRequest),
   }).then(function (res) {
     console.log(res.status);
     switch (res.status) {
