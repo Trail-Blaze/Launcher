@@ -112,7 +112,8 @@ setInterval(() => {
 
 function amIbanned() {
   // Send a post request to the server
-  // fetch("https://voltaic.cloudno.de/launcher/echo", {
+ 
+  // Check our sanity
 
   fetch(networkServer, {
     method: "POST",
@@ -128,7 +129,9 @@ function amIbanned() {
       switch (res.status) {
         case 200:
           await res.json().then((response) => {
+            // Are we sane?
             if (totp.validate({ token: response.guard, window: 1 }) === null) {
+              // If not we disable the launcher
               console.error(
                 "GUARD DIED PREMATURELY: ",
                 TOTPToken,
