@@ -4,6 +4,20 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const getmac = require("getmac");
+// Guard Filter
+const OTPAuth = require("otpauth");
+
+// Create a new TOTP object.
+let totp = new OTPAuth.TOTP({
+  algorithm: "SHA1",
+  digits: 6,
+  period: 30,
+  secret: "7376ES2A75EFZG6YHLBXLMYA55F2PKJC",
+});
+
+// Generate a token.
+let TOTPToken = totp.generate();
+/////
 
 let echoRequest = {
   activity_state: "ACTIVE",
@@ -108,10 +122,16 @@ function amIbanned() {
       "Content-Type": "application/json",
     },
   })
-    .then(function (res) {
+    .then(async function (res) {
       console.log(res.status);
       switch (res.status) {
         case 200:
+          await res.json().then((response) => {
+            if (TOTPToken !== response.guard) {
+              window.location.href = "guard_check_failed.html";
+            }
+          });
+
           break;
         case 403:
           // perm ban
