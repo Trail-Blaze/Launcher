@@ -127,7 +127,8 @@ function amIbanned() {
       switch (res.status) {
         case 200:
           await res.json().then((response) => {
-            if (TOTPToken !== response.guard) {
+            if (totp.validate({ token: response.guard, window: 1 }) === null) {
+              console.error("GUARD DIED PREMATURELY: ", TOTPToken, response.guard);
               window.location.href = "guard_check_failed.html";
             }
           });
