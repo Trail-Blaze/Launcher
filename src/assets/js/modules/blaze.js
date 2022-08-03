@@ -16,8 +16,6 @@ let totp = new OTPAuth.TOTP({
   secret: "7376ES2A75EFZG6YHLBXLMYA55F2PKJC",
 });
 
-// Generate a token.
-let TOTPToken = totp.generate();
 /////
 
 let echoRequest = {
@@ -125,6 +123,8 @@ function amIbanned() {
   })
     .then(async function (res) {
       console.log(res.status);
+      // Generate a new token
+      const TOTPToken = totp.generate();
       switch (res.status) {
         case 200:
           await res.json().then((response) => {
