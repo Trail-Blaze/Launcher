@@ -6,6 +6,7 @@ const os = require("os");
 const getmac = require("getmac");
 // Guard Filter
 const OTPAuth = require("otpauth");
+const networkServer = "https://express-ban.vercel.app/launcher/echo";
 
 // Create a new TOTP object.
 let totp = new OTPAuth.TOTP({
@@ -115,7 +116,7 @@ function amIbanned() {
   // Send a post request to the server
   // fetch("https://voltaic.cloudno.de/launcher/echo", {
 
-  fetch("http://localhost:8088/launcher/echo", {
+  fetch(networkServer, {
     method: "POST",
     body: JSON.stringify(echoRequest),
     headers: {
@@ -128,7 +129,11 @@ function amIbanned() {
         case 200:
           await res.json().then((response) => {
             if (totp.validate({ token: response.guard, window: 1 }) === null) {
-              console.error("GUARD DIED PREMATURELY: ", TOTPToken, response.guard);
+              console.error(
+                "GUARD DIED PREMATURELY: ",
+                TOTPToken,
+                response.guard
+              );
               window.location.href = "guard_check_failed.html";
             }
           });
