@@ -64,8 +64,8 @@ jobs:
         mv .temp/src/assets/js/blaze.js .temp/src/assets/js/modules/blaze.js
         mv .temp app
         pack app
-	      rm -rf app
-    shell: bash
+	rm -rf app
+
     - name: Sort Build Files
       # continue-on-error: true
       run: |
