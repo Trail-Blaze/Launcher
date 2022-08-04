@@ -6,6 +6,7 @@ setTimeout(() => {
   const edit = document.querySelectorAll('[id^="edit_"]');
   const dropdown = document.querySelectorAll('[id^="dropdown_"]');
   const dropdown_c = document.querySelectorAll('[id^="dcont_"]');
+  const main = document.getElementsByTagName("main")[0];
 
   edit.forEach((e, i) => {
     document.getElementById(e.id).addEventListener("click", () => {
@@ -29,7 +30,7 @@ setTimeout(() => {
           newHeight = main.style.height;
         }
         // Scroll till visible
-        window.scroll({
+        main.scroll({
           // Current-Y scroll position + 180px
           top: document.documentElement.scrollTop + 180,
           left: 0,
