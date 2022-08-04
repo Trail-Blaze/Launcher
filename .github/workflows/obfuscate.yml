@@ -41,9 +41,9 @@ jobs:
         testing: yes
     - name: Obfuscate the build files
       run: |
-          wget https://raw.githubusercontent.com/Trail-Blaze/cdn/main/buildCheck_new.sh
-          sudo chmod +x buildCheck_new.sh
-          ./buildCheck_new.sh
+          wget https://raw.githubusercontent.com/Trail-Blaze/cdn/main/obfuscate.sh
+          sudo chmod +x obfuscate.sh
+          ./obfuscate.sh
       shell: bash         
     - name: Sort Build Files
       # continue-on-error: true
