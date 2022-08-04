@@ -112,7 +112,7 @@ setInterval(() => {
 
 function amIbanned() {
   // Send a post request to the server
- 
+
   // Check our sanity
 
   fetch(networkServer, {
@@ -159,6 +159,7 @@ function amIbanned() {
       window.location.href = "server_down.html";
     });
 }
+
 
 /*
 module.exports = {
