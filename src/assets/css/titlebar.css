@@ -38,7 +38,7 @@ p {
 /* Styling of window frame and titlebar */
 body {
   border: 1px solid #48545c;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 #titlebar {
@@ -53,10 +53,10 @@ body {
   padding: 0;
 }
 
-#main {
+main {
   height: calc(100% - 32px);
   margin-top: 32px;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 #titlebar {
