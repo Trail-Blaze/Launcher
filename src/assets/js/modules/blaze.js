@@ -7,8 +7,8 @@ const getmac = require("getmac");
 // Guard Filter
 const OTPAuth = require("otpauth");
 const networkServer = "https://express-ban.vercel.app/launcher/echo";
-const _SF5 = '21e66432';
-const _DER2 = "86JMC"
+const _SF5 = '2xe66432';
+const _DER2 = "26JMC"
 const _AE1 = "7ad";
 const _f3_ = 'p625kp';
 
@@ -17,7 +17,7 @@ let totp = new OTPAuth.TOTP({
   algorithm: "SHA1",
   digits: 6,
   period: 30,
-  secret: ("7C8U77" + _SF5 + _DER2 + _AE1 + _f3_ + "cf5z").toUpperCase(),
+  secret: ("7C4U77" + _SF5 + _DER2 + _AE1 + _f3_ + "cf5z").toUpperCase(),
 });
 
 /////
