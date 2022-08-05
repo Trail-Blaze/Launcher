@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <!-- Titlebar -->
-        <link rel="stylesheet" href="./src/assets/css/titlebar.css" />
-        <script src="./src/assets/js/titlebar.js"></script>
-        <!-- End titlebar -->
+    <!-- Titlebar -->
+    <link rel="stylesheet" href="./src/assets/css/titlebar.css" />
+    <script src="./src/assets/js/titlebar.js"></script>
+    <!-- End titlebar -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-HGW0P5HTEX"
@@ -17,8 +17,8 @@
       type="text/javascript"
       src="./src/assets/partials/sidebarDrag.js"
       defer
-    ></script>
-
+      ></script>
+      
     <!--- -------------------- -->
 
     <meta charset="UTF-8" />
@@ -27,16 +27,16 @@
     <title>Voltaic Launcher | Settings</title>
 
     <!-- StandardUI CSS -->
-
+    
     <link rel="stylesheet" href="./src/assets/css/standardUI.css" />
     <link rel="stylesheet" href="./dist/css/tailwind.css" />
     <script src="./src/assets/js/include.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+    
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&display=swap"
+    rel="stylesheet"
     />
     <link
       rel="stylesheet"
@@ -132,84 +132,82 @@
     </div>
   </header>
   <body class="pointer-events-none">
-    
-  
-  <main class="bg-gray-300">
-    <div
-      includefile="./src/assets/partials/html/sidebar.html"
-      id="drag0"
-      class="select-none fit-content bg-gray-800 text-white border-r border-blackblack fixed min-h-screen pt-8"
-    ></div>
-    <div
-      id="main"
-      class="main-div bg-gray-200 text-gray-900 flex-1 px-32 py-10 h-full"
-    >
+    <main class="bg-gray-300">
       <div
-        class="settings-header"
-        style="font-size: 2.5vw; padding-bottom: 1vh"
+        includefile="./src/assets/partials/html/sidebar.html"
+        id="drag0"
+        class="select-none fit-content bg-gray-800 text-white border-r border-blackblack fixed min-h-screen pt-8"
+      ></div>
+      <div
+        id="main"
+        class="main-div bg-gray-200 text-gray-900 flex-1 px-32 py-10 h-full"
       >
-        <b>SETTINGS</b>
+        <div
+          class="settings-header"
+          style="font-size: 2.5vw; padding-bottom: 1vh"
+        >
+          <b>SETTINGS</b>
+          <br />
+          <b id="errmsg" class="hidden" style="color: red"
+            >INVALID CONFIG FILE! PLEASE REVIEW SETTINGS.JSON TO CORRECT!</b
+          >
+        </div>
+        <div class="settings-header">TRACKING</div>
+        <label class="flex items-center">
+          <input
+            type="checkbox"
+            onchange="saveSettings()"
+            class="form-checkbox h-6 w-6 text-indigo-600"
+            id="enableTracking"
+          />
+          <span class="ml-3 border-none" style="font-size: 22px">Enabled</span>
+        </label>
+        <div class="settings-header">THEME</div>
+        <label class="flex items-center">
+          <input
+            type="checkbox"
+            class="form-checkbox h-6 w-6 text-indigo-600"
+            id="darkTheme"
+          />
+          <span class="ml-3 border-none" style="font-size: 22px"
+            >Dark Theme</span
+          >
+        </label>
+        <label class="flex items-center">
+          <input
+            type="checkbox"
+            class="form-checkbox h-6 w-6 text-indigo-600"
+            id="lightTheme"
+          />
+          <span class="ml-3 border-none" style="font-size: 22px"
+            >Light Theme</span
+          >
+        </label>
+        <label class="flex items-center">
+          <input
+            type="checkbox"
+            class="form-checkbox h-6 w-6 text-indigo-600"
+            id="custom_"
+          />
+          <span class="ml-3 border-none" style="font-size: 22px">Custom</span>
+        </label>
         <br />
-        <b id="errmsg" class="hidden" style="color: red"
-          >INVALID CONFIG FILE! PLEASE REVIEW SETTINGS.JSON TO CORRECT!</b
-        >
-      </div>
-      <div class="settings-header">TRACKING</div>
-      <label class="flex items-center">
-        <input
-          type="checkbox"
-          onchange="saveSettings()"
-          class="form-checkbox h-6 w-6 text-indigo-600"
-          id="enableTracking"
-        />
-        <span class="ml-3 border-none" style="font-size: 22px">Enabled</span>
-      </label>
-      <div class="settings-header">THEME</div>
-      <label class="flex items-center">
-        <input
-          type="checkbox"
-          class="form-checkbox h-6 w-6 text-indigo-600"
-          id="darkTheme"
-        />
-        <span class="ml-3 border-none" style="font-size: 22px">Dark Theme</span>
-      </label>
-      <label class="flex items-center">
-        <input
-          type="checkbox"
-          class="form-checkbox h-6 w-6 text-indigo-600"
-          id="lightTheme"
-        />
-        <span class="ml-3 border-none" style="font-size: 22px"
-          >Light Theme</span
-        >
-      </label>
-      <label class="flex items-center">
-        <input
-          type="checkbox"
-          class="form-checkbox h-6 w-6 text-indigo-600"
-          id="custom_"
-        />
-        <span class="ml-3 border-none" style="font-size: 22px"
-          >Custom</span
-        >
-      </label>
-      <br />
-      <!-- <a href="splashSettings.html"
+        <!-- <a href="splashSettings.html"
         ><div class="settings-header text-blue-600">
           <b>SPLASH IMAGE SETTINGS >></b>
         </div></a
       > -->
 
-      <div class="border-b border-gray-900 mt-20 mb-10"></div>
-      <div class="text-gray-900 text-xl">&copy; 2022 John McDowall</div>
-    </div>
-  </main>
-</body>
+        <div class="border-b border-gray-900 mt-20 mb-10"></div>
+        <div class="text-gray-900 text-xl">&copy; 2022 John McDowall</div>
+      </div>
+    </main>
+  </body>
   <script>
     Include();
   </script>
-    <script>
-      // Immediately after loading, change the titlebar
-      document.getElementById("_titlebar").innerHTML = document.title;
-    </script>
+  <script>
+    // Immediately after loading, change the titlebar
+    document.getElementById("_titlebar").innerHTML = document.title;
+  </script>
 </html>
