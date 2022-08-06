@@ -42,20 +42,25 @@ const createWindow = () => {
     },
   });
 
-  // Disable live-build blocking feature
+  // //  Enable live-build blocking feature
 
-  // const ses = session.defaultSession;
-  // const urlToBlock =
-  //   /^https:\/\/trail-blaze\.github\.io\/Otto(\/(.*)?(\?.*)?)?$/;
+  //   const ses = session.defaultSession;
+  //   const urlToBlock =
+  //     /^file:\/\/(\/(.*)?(\?.*)?)?$/;
 
-  // // Prevent "other" requests
-  // ses.webRequest.onBeforeRequest((details, callback) => {
-  //   if (!urlToBlock.test(details.url))
-  //     // cancel the request
-  //     callback({ cancel: true });
-  //   // let the request happen
-  //   else callback({});
-  // });
+  //   // Prevent "other" requests
+  //   ses.webRequest.onBeforeRequest((details, callback) => {
+  //     if (!urlToBlock.test(details.url))
+  //       // cancel the request
+  //       callback({ cancel: true });
+  //     // let the request happen
+  //     else callback({});
+  //   });
+
+  mainWindow.webContents.on("new-window", function (e, url) {
+    e.preventDefault();
+    require("electron").shell.openExternal(url);
+  });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "escrow.html"));
