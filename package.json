@@ -2,7 +2,7 @@
   "name": "voltaic",
   "productName": "Voltaic",
   "version": "1.0.0A",
-  "description": "My Electron application description",
+  "description": "The Voltaic Launcher",
   "main": "app.js",
   "scripts": {
     "start-deskgap": "deskgap .",
