@@ -17,8 +17,8 @@
       type="text/javascript"
       src="./src/assets/partials/sidebarDrag.js"
       defer
-      ></script>
-      
+    ></script>
+
     <!--- -------------------- -->
 
     <meta charset="UTF-8" />
@@ -27,16 +27,16 @@
     <title>Voltaic Launcher | Settings</title>
 
     <!-- StandardUI CSS -->
-    
+
     <link rel="stylesheet" href="./src/assets/css/standardUI.css" />
     <link rel="stylesheet" href="./dist/css/tailwind.css" />
     <script src="./src/assets/js/include.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&display=swap"
+      rel="stylesheet"
     />
     <link
       rel="stylesheet"
@@ -198,8 +198,13 @@
         </div></a
       > -->
 
-        <div class="border-b border-gray-900 mt-20 mb-10"></div>
-        <div class="text-gray-900 text-xl">&copy; 2022 John McDowall</div>
+        <!-- DarkMode Hack-->
+        <div class="border-b border-gray-900 mt-20"></div>
+        <div class="border-b mb-10"></div>
+        <!-- In the above we literally "merged" two borders together to create one -->
+        <!-- Technically, they are just one pixel apart from each other - but the normal person-->
+        <!-- Without taking much notice would not find anything different -->
+        <div id="__version" class="text-xl">&copy; 2022 John McDowall</div>
       </div>
     </main>
   </body>
@@ -209,5 +214,9 @@
   <script>
     // Immediately after loading, change the titlebar
     document.getElementById("_titlebar").innerHTML = document.title;
+    document.getElementById("__version").innerHTML =
+      document.getElementById("__version").innerHTML +
+      " - Voltaic Launcher " +
+      require("@electron/remote").app.getVersion().toString();
   </script>
 </html>
