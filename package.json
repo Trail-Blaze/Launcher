@@ -56,7 +56,7 @@
     "electron-packager": "^15.4.0",
     "electron-squirrel-startup": "^1.0.0",
     "getmac": "^5.20.0",
-    "node-abi": "^3.22.0",
+    "node-abi": "^3.24.0",
     "os-utils": "0.0.14",
     "otpauth": "^8.0.1",
     "shell": "^0.9.4",
