@@ -4,7 +4,7 @@
 ![image](https://github.com/trail-blaze/otto/actions/workflows/build-css.yml/badge.svg)
 
 
-![image](https://user-images.githubusercontent.com/34188635/168923276-823498bc-fb83-4d96-8890-27da367b91c3.png)
+![image](https://user-images.githubusercontent.com/34188635/184413178-7fee98ef-49fd-4c7c-be93-daaedcecacff.png)
 
 ### INSTALLED MODULES
 
